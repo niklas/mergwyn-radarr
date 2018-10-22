@@ -1,0 +1,6 @@
+radarr::package_manage: true
+radarr::service_manage: true
+radarr::service_active: true
+radarr::user:           'radarr'
+radarr::group:          'radarr'
+radarr::install_path:   '/opt'
