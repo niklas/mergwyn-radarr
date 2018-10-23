@@ -14,7 +14,11 @@ class radarr::install {
   $archive_path    = "${install_path}/${archive_name}"
 
   if $radarr::package_manage {
-    file { $extract_dir: ensure => directory, }
+    file { $extract_dir:
+      ensure => directory,
+      user   => $::radarr::user,
+      group  => $::radarr::group,
+    }
 
     archive { $archive_name:
       path         => $archive_path,
@@ -23,6 +27,8 @@ class radarr::install {
       extract_path => $extract_dir,
       creates      => $creates,
       cleanup      => false,
+      user         => $::radarr::user,
+      group        => $::radarr::group,
       #TODO reference to mono
       #require      => Class['mono'],
     }
