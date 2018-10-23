@@ -4,20 +4,17 @@
 ############################################
 
 [Unit]
-Description=Radarr Daemon
-After=network.target
+escription=Radarr Daemon
+After=syslog.target network.target
 
 [Service]
 User=<%= scope['::radarr::user'] %>
 Group=<%= scope['::radarr::group'] %>
 Type=simple
-Restart=always
-RestartSec=5
+Restart=on-failure
 #TODO parameterise path
-ExecStart=/usr/bin/mono --debug <%= scope['::radarr::install_path'] %>/Radarr/RadarrConsole.exe --NoRestart
+ExecStart=/usr/bin/mono <%= scope['::radarr::install_path'] %>/Radarr/Radarr.exe --nobrowser
 TimeoutStopSec=20
-#ExecStart=/usr/bin/radarr-daemon --foreground --config-dir <%= scope['::radarr::params::config_dir'] %><% if scope['::radarr::log_file'] -%> --logfile <%= scope['::radarr::log_file'] %><% end %>
-#ExecReload=/bin/kill -s HUP $MAINPID
 
 [Install]
 WantedBy=multi-user.target
