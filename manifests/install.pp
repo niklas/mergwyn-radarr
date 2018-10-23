@@ -9,8 +9,8 @@ class radarr::install {
   $creates         = "${extract_dir}/Radarr"
   $link            = "${install_path}/Radarr"
   $repository_url  = 'https://github.com/Radarr/Radarr/releases/download/'
-  $package_source  = "${repository_url}/${package_version}/${package_name}.tar.gz"
-  $archive_name    = "${package_name}-${package_version}.tar.gz"
+  $package_source  = "${repository_url}/${package_version}/${package_name}.linux.tar.gz"
+  $archive_name    = "${package_name}-${package_version}.linux.tar.gz"
   $archive_path    = "${install_path}/${archive_name}"
 
   if $radarr::package_manage {
