@@ -13,7 +13,7 @@ end
 Facter.add(:radarr_version) do
     confine :kernel  => :linux
     setcode do
-        Facter::Util::Resolution.exec("wget -q https://github.com/Radarr/Radarr/releases/latest -O - | grep linux.tar.gz | grep browser_download_url | head -1 | cut -d ' ' -f 4")
+        Facter::Util::Resolution.exec("wget -q https://github.com/Radarr/Radarr/releases/latest -O - | grep -E \/tag\/ | head -1 | awk -F '[><]' '{print $3}")
     end
 end
 
