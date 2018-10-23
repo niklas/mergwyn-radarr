@@ -2,7 +2,7 @@
 class radarr::install {
 
   $install_path   = $::radarr::install_path
-  $package_name   = 'Radarr.Binaries.Mono'
+  $package_name   = 'Radarr.develop'
   $package_version = $::radarr_version
   $repository_url = 'https://github.com/Radarr/Radarr/releases/download/'
   $package_source = "${repository_url}/${package_version}/${package_name}.tar.gz"
