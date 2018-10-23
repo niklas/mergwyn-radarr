@@ -15,7 +15,7 @@ class radarr::install {
       user         => $::radarr::user,
       group        => $::radarr::group,
       extract      => true,
-      extract_path => $archive_name,
+      extract_path => $install_path,
       creates      => $archive_name,
       cleanup      => false,
       #TODO reference to mono
