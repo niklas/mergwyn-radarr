@@ -1,7 +1,7 @@
 #
 class radarr::install {
   #TODO tidy up old versions
-  notify("radarr_version is '${::radarr_version}'")
+  notify { "radarr_version is '${::radarr_version}'" }
   $package_name    = 'Radarr.develop'
   $package_version = $::radarr_version
   $install_path    = $::radarr::install_path
