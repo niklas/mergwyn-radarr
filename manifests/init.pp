@@ -36,9 +36,10 @@ class radarr (
   Boolean $package_manage = true,
   Boolean $service_manage = true,
   Boolean $service_active = true,
-  String  $user = 'radarr',
-  String  $group = 'radarr',
-  String  $install_path = '/opt',
+  String  $user           = 'radarr',
+  String  $group          = 'radarr',
+  String  $install_path   = '/opt',
+  Optional[Integer[1,10]] $keep = 1,
   ) {
 
   contain radarr::config
