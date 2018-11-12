@@ -45,6 +45,7 @@ class radarr::install {
       #onlyif      => "test $(ls -d ${link}-* | wc -l) -gt ${keep}",
       refreshonly => true,
       subscribe   => Archive[$archive_name],
+    }
   }
 }
 # vim: number tabstop=8 expandtab shiftwidth=2 softtabstop=2
