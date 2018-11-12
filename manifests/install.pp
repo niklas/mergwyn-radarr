@@ -8,7 +8,7 @@ class radarr::install {
   $package_name    = 'Radarr.develop'
   $package_version = $::radarr_version
   $install_path    = $::radarr::install_path
-  $extract_dir     = "${install_path}/Radarr-v${package_version}"
+  $extract_dir     = "${install_path}/Radarr-${package_version}"
   $creates         = "${extract_dir}/Radarr"
   $link            = "${install_path}/Radarr"
   $repository_url  = 'https://github.com/Radarr/Radarr/releases/download/'
