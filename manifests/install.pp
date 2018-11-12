@@ -1,7 +1,9 @@
 #
 class radarr::install {
   #TODO tidy up old versions
-  if $::radarr_version =~ Optional[String[0,0]] {
+  notify {"radarr_version is '${::radarr_version}'": }
+  unless $::radarr_version =~ String[1] {
+    err ("radarr_version is '${::radarr_version}'")
     err ("radarr_version is '${::radarr_version}'")
   }
   $package_name    = 'Radarr.develop'
