@@ -5,7 +5,6 @@ class radarr::install {
   unless $::radarr_version =~ String[1] {
     fail ("radarr_version is '${::radarr_version}'")
   }
-https://github.com/Radarr/Radarr/releases/download/v0.2.0.1217/Radarr.v0.2.0.1217.linux.tar.gz
   $package_name    = 'Radarr'
   $package_version = $::radarr_version
   $install_path    = $::radarr::install_path
