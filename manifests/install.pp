@@ -1,7 +1,7 @@
 #
 class radarr::install {
   #TODO tidy up old versions
-  notify {"radarr_version is '${::radarr_version}'": }
+  #notify {"radarr_version is '${::radarr_version}'": }
   unless $::radarr_version =~ String[1] {
     fail ("radarr_version is '${::radarr_version}'")
   }
