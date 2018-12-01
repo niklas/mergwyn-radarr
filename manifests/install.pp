@@ -16,9 +16,9 @@ class radarr::install {
 
   if $radarr::package_manage {
     file { $extract_dir:
-      ensure  => directory,
-      owner   => $::radarr::user,
-      group   => $::radarr::group,
+      ensure => directory,
+      owner  => $::radarr::user,
+      group  => $::radarr::group,
     }
 
     archive { $archive_name:
