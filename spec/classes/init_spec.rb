@@ -9,7 +9,7 @@ describe 'radarr' do
       let(:pre_condition) { 'include archive' }
 
       context 'with default values for all parameters' do
-	it { is_expected.to contain_class('radarr') }
+        it { is_expected.to contain_class('radarr') }
       end
     end
   end
