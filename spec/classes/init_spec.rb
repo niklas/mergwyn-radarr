@@ -8,9 +8,9 @@ describe 'radarr' do
 
       context 'with default values for all parameters' do
         it { is_expected.to contain_class('radarr') }
- 	it { is_expected.to contain_class('radarr::config') }
-  	it { is_expected.to contain_class('radarr::install') }
-  	it { is_expected.to contain_class('radarr::service') }
+        it { is_expected.to contain_class('radarr::config') }
+        it { is_expected.to contain_class('radarr::install') }
+        it { is_expected.to contain_class('radarr::service') }
       end
     end
   end
