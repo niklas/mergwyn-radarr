@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/mergwyn/puppet-ddclient.svg?branch=master)](https://travis-ci.com/mergwyn/puppet-ddclient)
 # radarr
 
 #### Table of Contents
