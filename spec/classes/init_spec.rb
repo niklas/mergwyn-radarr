@@ -6,10 +6,11 @@ describe 'radarr' do
         facts
       end
 
-      let(:pre_condition) { 'include archive' }
-
       context 'with default values for all parameters' do
         it { is_expected.to contain_class('radarr') }
+ 	it { is_expected.to contain_class('radarr::config') }
+  	it { is_expected.to contain_class('radarr::install') }
+  	it { is_expected.to contain_class('radarr::service') }
       end
     end
   end
