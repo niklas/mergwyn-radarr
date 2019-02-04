@@ -4,7 +4,7 @@ class radarr::install {
     fail ("radarr version is '${facts[radarr_version]}'")
   }
   $package_name    = 'Radarr.develop'
-  $package_version = "${facts[radarr_version]}"
+  $package_version = $facts[radarr_version]
   $install_path    = $::radarr::install_path
   $extract_dir     = "${install_path}/Radarr-${package_version}"
   $creates         = "${extract_dir}/Radarr"
