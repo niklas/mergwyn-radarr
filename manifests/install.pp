@@ -4,13 +4,13 @@ class radarr::install {
     fail ("radarr version is '${facts[radarr_version]}'")
   }
   $package_name    = 'Radarr.develop'
-  $package_version = "v${facts[radarr_version]}"
+  $package_version = "${facts[radarr_version]}"
   $install_path    = $::radarr::install_path
   $extract_dir     = "${install_path}/Radarr-${package_version}"
   $creates         = "${extract_dir}/Radarr"
   $link            = "${install_path}/Radarr"
   $repository_url  = 'https://github.com/Radarr/Radarr/releases/download/'
-  $package_source  = "${repository_url}/v${package_version}/${package_name}.v${package_version}.linux.tar.gz"
+  $package_source  = "${repository_url}/v${package_version}/${package_name}.${package_version}.linux.tar.gz"
   $archive_name    = "${package_name}-${package_version}.linux.tar.gz"
   $archive_path    = "${install_path}/${archive_name}"
 
