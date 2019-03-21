@@ -42,7 +42,7 @@ class radarr::install {
     exec {'radarr_tidy':
       cwd         => $install_path,
       path        => '/usr/sbin:/usr/bin:/sbin:/bin:',
-      command     => "ls -d ${link}-* | head -n -${radarr::keep} | xargs rm -rf",
+      command     => "ls -dtr ${link}-* | head -n -${radarr::keep} | xargs rm -rf",
       #onlyif      => "test $(ls -d ${link}-* | wc -l) -gt ${radarr::keep}",
       refreshonly => true,
       subscribe   => Archive[$archive_name],
