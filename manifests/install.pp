@@ -1,10 +1,8 @@
 #
-class radarr::install {
-  unless $facts[radarr_version] =~ String[1] {
-    fail ("radarr version is '${facts[radarr_version]}'")
-  }
+class radarr::install(
+  $package_version = "0.2.0.1450"
+) {
   $package_name    = 'Radarr.develop'
-  $package_version = $facts[radarr_version]
   $install_path    = $::radarr::install_path
   $extract_dir     = "${install_path}/Radarr-${package_version}"
   $creates         = "${extract_dir}/Radarr"
